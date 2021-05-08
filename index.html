@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div id="vueapp">
+    <video width="100%" height="300" ref="preview" autoplay></video>
+    <div>
+        <button class="btn btn-danger" @click="btnStartRecordClicked" :disabled="recording">录制</button>
+        <button class="btn btn-danger" @click="btnPauseRecordClicked" :disabled="!recording || paused">暂停</button>
+        <button class="btn btn-danger" @click="btnResumeRecordClicked" :disabled="!recording || !paused">继续</button>
+        <button class="btn btn-danger" @click="btnStopRecordClicked" :disabled="!recording">停止</button>
+    </div>
+
+</div>
+<script src="./renderer.js"></script>
+</body>
+</html>
